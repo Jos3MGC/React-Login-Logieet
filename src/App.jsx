@@ -6,6 +6,7 @@ import HomeApp from "./pages/HomeApp";
 import Login from "./Login/Login";
 import PrivateRoute from "./PrivateRoute/index";
 import { useUser } from "./UserProvider/index";
+import Blank from './pages/Blank';
 
 function App() {
   const [roles, setRoles] = useState([]);

@@ -35,20 +35,40 @@ const Login = () => {
                 if (response.status === 200) return response.text();
                 else if (response.status === 401 || response.status === 403) {
                     setErrorMsg("Usuario o contraseña invalida");
+                    error();
                 } else {
                     setErrorMsg(
                         "Algo salio mal, intentelo de nuevo despues"
                     );
+                    error();
                 }
             })
             .then((data) => {
-                var userID = JSON.parse(data);
-                //console.log("Datos de userID: " + userID.idEmpresa);                
+                var userID = JSON.parse(data);           
                 if (data) {
                     user.setID(userID.idEmpresa);
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `Bienvenido: ${userID.idEmpresa}`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     navigate("/mainLayout");
                 }
             });
+    }
+
+    function error() {
+        return (
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: `${errorMsg}`,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        )
     }
 
     return (
@@ -56,16 +76,16 @@ const Login = () => {
             <div className='login-box'>
                 <img src={Logo} className='avatar' alt='' />
                 <button
-                        className="exit"
-                        variant="secondary"
-                        type="button"
-                        size="lg"
-                        onClick={() => {
-                            navigate("/");
-                        }}
-                    >
-                        Exit
-                    </button>
+                    className="exit"
+                    variant="secondary"
+                    type="button"
+                    size="lg"
+                    onClick={() => {
+                        navigate("/");
+                    }}
+                >
+                    Exit
+                </button>
                 <h1>Bienvenido</h1>
                 <form>
 
@@ -86,16 +106,6 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    {errorMsg ? (
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: `${errorMsg}`,
-                            footer: '<a href="">Why do I have this issue?</a>'
-                          })
-                    ) : (
-                        <></>
-                    )}
                     <button
                         className='buton'
                         id="submit"

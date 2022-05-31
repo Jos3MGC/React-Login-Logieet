@@ -11,7 +11,6 @@ export default function HomeApp() {
                     <Route index element={<Dashboard />} />
                     <Route path="tables" element={<Table />} />
                     <Route path="graph" element={<Blank />} />
-                    <Route path="user" element={<Blank />} />
                     <Route path="settings" element={<Blank />} />
                 </Route>
             </Routes>

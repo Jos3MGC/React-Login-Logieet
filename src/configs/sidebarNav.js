@@ -18,12 +18,6 @@ const sidebarNav = [
         text: 'Gráficas'
     },
     {
-        link: 'user',
-        section: 'user',
-        icon: <i className='bx bx-user'></i>,
-        text: 'Usuario'
-    },
-    {
         link: 'settings',
         section: 'settings',
         icon: <i className='bx bx-cog'></i>,

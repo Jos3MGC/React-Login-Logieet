@@ -17,12 +17,6 @@ const sidebarNav = [
         icon: <i className='bx bx-line-chart'></i>,
         text: 'Gráficas'
     },
-    {
-        link: 'settings',
-        section: 'settings',
-        icon: <i className='bx bx-cog'></i>,
-        text: 'Configuración'
-    }
 ]
 
 export default sidebarNav

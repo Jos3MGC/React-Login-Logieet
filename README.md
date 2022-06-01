@@ -8,6 +8,7 @@
                 - sweetalert2
                 - js-cookie
                 - node-sass
+                - echarts-for-react
 
 # Reference
 

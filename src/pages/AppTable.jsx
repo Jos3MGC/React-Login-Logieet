@@ -18,7 +18,10 @@ const Container = styled('div')(({ theme }) => ({
 const AppTable = () => {
     return (
         <Container>
-                <Tables />
+            <div className="title mb">
+                Tabla de infomación:
+            </div>
+            <Tables />
             <Box py="12px" />
         </Container>
     )

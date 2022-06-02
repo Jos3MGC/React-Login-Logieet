@@ -126,7 +126,7 @@ function TableInfo() {
                     </TableContainer>
                     <TablePagination
                         sx={{ px: 2 }}
-                        rowsPerPageOptions={[5, 10, 25]}
+                        rowsPerPageOptions={[50, 100, 500, 1000]}
                         component="div"
                         count={rows.length}
                         rowsPerPage={rowsPerPage}

@@ -7,26 +7,26 @@ const data = {
     },
     summary: [
         {
-            title: 'Sales',
-            subtitle: 'Total sales today',
+            title: 'Ventas',
+            subtitle: 'Ventas del día',
             value: '$1.000',
             percent: 70
         },
         {
-            title: 'Orders',
-            subtitle: 'Total orders today',
+            title: 'Servicios',
+            subtitle: 'Servicios del día',
             value: '3000',
             percent: 49
         },
         {
-            title: 'Revenue',
-            subtitle: 'Total revenue today',
+            title: 'Ingresos',
+            subtitle: 'Ingresos del día',
             value: '$678',
             percent: 38
         },
         {
-            title: 'Visits',
-            subtitle: 'Total visits today',
+            title: 'Objetivos del día',
+            subtitle: 'Objetivos del día concluidos',
             value: '2345',
             percent: 55
         }
@@ -49,7 +49,7 @@ const data = {
         { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
     ],
     revenueSummary: {
-        title: 'Revenue',
+        title: 'Ingresos',
         value: '$678',
         chartData: {
             labels: ['May', 'Jun', 'July', 'Aug', 'May', 'Jun', 'July', 'Aug'],
@@ -59,36 +59,36 @@ const data = {
     overall: [
         {
             value: '300K',
-            title: 'Orders'
+            title: 'Ordenes'
         },
         {
             value: '9.876K',
-            title: 'Customers'
+            title: 'Clientes'
         },
         {
             value: '1.234K',
-            title: 'Products'
+            title: 'Productos'
         },
         {
             value: '$5678',
-            title: 'Revenue'
+            title: 'Ganancias'
         }
     ],
     revenueByChannel: [
         {
-            title: 'Direct',
+            title: 'Directo',
             value: 70
         },
         {
-            title: 'External search',
+            title: 'Busquedas externas',
             value: 40
         },
         {
-            title: 'Referal',
+            title: 'Remisiones',
             value: 60
         },
         {
-            title: 'Social',
+            title: 'Sociales',
             value: 30
         }
     ],

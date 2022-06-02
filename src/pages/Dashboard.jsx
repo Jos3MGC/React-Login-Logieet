@@ -56,11 +56,11 @@ const Dashboard = () => {
                 </div>
             </DashboardWrapperMain>
             <DashboardWrapperRight>
-                <div className="title mb">Overall</div>
+                <div className="title mb">General</div>
                 <div className="mb">
                     <OverallList />
                 </div>
-                <div className="title mb">Revenue by channel</div>
+                <div className="title mb">Ingresos por página</div>
                 <div className="mb">
                     <RevenueList />
                 </div>
@@ -118,7 +118,7 @@ const RevenueByMonthsChart = () => {
     return (
         <>
             <div className="title mb">
-                Revenue by months
+                Ganancias por mes
             </div>
             <div>
                 <Bar options={chartOptions} data={chartData} height={`300px`} />

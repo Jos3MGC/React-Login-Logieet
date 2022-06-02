@@ -11,12 +11,12 @@ const sidebarNav = [
         icon: <i className='bx bx-table' ></i>,
         text: 'Tablas'
     },
-    {
+    /*{
         link: 'graph',
         section: 'graph',
         icon: <i className='bx bx-line-chart'></i>,
         text: 'Gráficas'
-    },
+    },*/
 ]
 
 export default sidebarNav

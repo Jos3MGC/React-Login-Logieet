@@ -52,21 +52,10 @@ const StyledTable = styled(Table)(({ theme }) => ({
 }))
 
 const columns = [
-    { id: 'rank', label: 'Rank'},
-    { id: 'idEmpresa', label: 'Empresa'},
-    { id: 'sucursal', label: 'Body'},
-    { id: 'folioOper', label: 'Folio'},
-    { id: 'fecha', label: 'Fecha'},
-    { id: 'nota', label: 'Nota'},
-    /*{ id: 'categoria', label: 'Categoria'},
-    { id: 'codigo', label: 'Codigo'},
-    { id: 'cantidad', label: 'Cantidad'},
-    { id: 'precio', label: 'Precio'},
-    { id: 'importe', label: 'Importe'},
-    { id: 'vendedor', label: 'Vendedor'},
-    { id: 'costoNow', label: 'Costo'},
+    { id: 'sucursal', label: 'Sucursal'},
+    { id: 'categoria', label: 'Categoria'},
+    { id: 'descripcion', label: 'Descripción'},
     { id: 'cliente', label: 'Cliente'},
-    { id: 'utilidad', label: 'Utilidad'},*/
 ];
 
 function TableInfo() {

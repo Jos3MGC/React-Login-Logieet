@@ -90,6 +90,9 @@ function TableInfo() {
 
     return (
         <Box>
+            <div className="title mb">
+                Tabla de infomación:
+            </div>
             <StyledTable>
                     <TableContainer>
                         <Table stickyHeader aria-label="sticky table">

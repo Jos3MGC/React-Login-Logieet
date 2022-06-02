@@ -4,7 +4,7 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   console.log("All Cookies", Cookies.get());
-  const [id, setID] = useState(Cookies.get("idEmpresa"));
+  const [id, setID] = useState(Cookies.get('idEmpresa'));
   console.log("UserProvider id: ", id);
 
   const value = { id, setID };

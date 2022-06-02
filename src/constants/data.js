@@ -7,32 +7,49 @@ const data = {
     },
     summary: [
         {
-            title: 'Sales',
-            subtitle: 'Total sales today',
+            title: 'Ventas',
+            subtitle: 'Ventas del día',
             value: '$1.000',
             percent: 70
         },
         {
-            title: 'Orders',
-            subtitle: 'Total orders today',
+            title: 'Servicios',
+            subtitle: 'Servicios del día',
             value: '3000',
             percent: 49
         },
         {
-            title: 'Revenue',
-            subtitle: 'Total revenue today',
+            title: 'Ingresos',
+            subtitle: 'Ingresos del día',
             value: '$678',
             percent: 38
         },
         {
-            title: 'Visits',
-            subtitle: 'Total visits today',
+            title: 'Objetivos del día',
+            subtitle: 'Objetivos del día concluidos',
             value: '2345',
             percent: 55
         }
     ],
+    columns: [
+        { id: 'id', label: 'ID', minWidth: 150 },
+        { id: 'lastName', label: 'Apellido', minWidth: 100 },
+        { id: 'firstName', label: 'Nombre', minWidth: 100 },
+        { id: 'age', label: 'Edad', minWidth: 100 },
+    ],
+    rows: [
+        { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+        { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+        { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+        { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+        { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+        { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+        { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+        { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+        { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    ],
     revenueSummary: {
-        title: 'Revenue',
+        title: 'Ingresos',
         value: '$678',
         chartData: {
             labels: ['May', 'Jun', 'July', 'Aug', 'May', 'Jun', 'July', 'Aug'],
@@ -42,36 +59,36 @@ const data = {
     overall: [
         {
             value: '300K',
-            title: 'Orders'
+            title: 'Ordenes'
         },
         {
             value: '9.876K',
-            title: 'Customers'
+            title: 'Clientes'
         },
         {
             value: '1.234K',
-            title: 'Products'
+            title: 'Productos'
         },
         {
             value: '$5678',
-            title: 'Revenue'
+            title: 'Ganancias'
         }
     ],
     revenueByChannel: [
         {
-            title: 'Direct',
+            title: 'Directo',
             value: 70
         },
         {
-            title: 'External search',
+            title: 'Busquedas externas',
             value: 40
         },
         {
-            title: 'Referal',
+            title: 'Remisiones',
             value: 60
         },
         {
-            title: 'Social',
+            title: 'Sociales',
             value: 30
         }
     ],

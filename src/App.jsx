@@ -3,7 +3,7 @@ import './scss/App.scss'
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import HomeApp from "./pages/HomeApp";
-import Login from "./Login/Login";
+import Login from "./pages/Login/Login";
 import PrivateRoute from "./PrivateRoute/index";
 import { useUser } from "./UserProvider/index";
 

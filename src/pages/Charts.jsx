@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Bar } from 'react-chartjs-2';
-import { data } from '../constants/data';
+import { data } from '../assets/constants';
 import Box from '../components/box/Box';
 //import { colors } from '../constants/colors';
 

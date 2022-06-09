@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2'
 import Box from '../components/box/Box'
 import DashboardWrapper, { DashboardWrapperMain, DashboardWrapperRight } from '../components/dashboard-wrapper/DashboardWrapper'
 import SummaryBox, { SummaryBoxSpecial } from '../components/summary-box/SummaryBox'
-import { colors, data } from '../constants'
+import { colors, data } from '../assets/constants'
 import {
     Chart as ChartJS,
     CategoryScale,

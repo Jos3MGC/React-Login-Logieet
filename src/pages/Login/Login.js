@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../UserProvider";
+import { useUser } from "../../UserProvider";
 import './Login.css';
-import Logo from "../assets/images/logo.svg";
+import Logo from "../../assets/images/logo.svg";
 
-import LOGIN_API_URL from "../api/apiLogin";
+import LOGIN_API_URL from "../../api/apiLogin";
 import Swal from 'sweetalert2';
 window.Swal = Swal;
 

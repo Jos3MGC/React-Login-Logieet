@@ -1,5 +1,5 @@
 import React from 'react'
-import { data } from '../../constants'
+import { data } from '../../assets/constants'
 import './revenue-list.scss'
 import ProgressBar from '../progressbar/ProgressBar'
 

@@ -10,6 +10,7 @@ import { styled } from '@mui/system'
 import TABLE_API_URL from "../../api/apiTable";
 import { useUser } from "../../UserProvider";
 import Box from '../box/Box';
+import SearchBar from "material-ui-search-bar";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -52,20 +53,21 @@ const StyledTable = styled(Table)(({ theme }) => ({
 }))
 
 const columns = [
-    { id: 'sucursal', label: 'Sucursal'},
-    { id: 'categoria', label: 'Categoria'},
-    { id: 'descripcion', label: 'Descripción'},
-    { id: 'cliente', label: 'Cliente'},
+    { id: 'sucursal', label: 'Sucursal' },
+    { id: 'categoria', label: 'Categoria' },
+    { id: 'descripcion', label: 'Descripción' },
+    { id: 'cliente', label: 'Cliente' },
 ];
 
 function TableInfo() {
 
     const userId = useUser();
-    const[dataTable, setDataTable] = useState([]);
+    const [dataTable, setDataTable] = useState([]);
+    const [searched, setSearched] = useState("");
 
     const fetchInventory = () => {
         console.log(userId.id);
-        fetch(`${TABLE_API_URL}`+ userId.id)
+        fetch(`${TABLE_API_URL}` + userId.id)
             .then(res => res.json())
             .then(json => setDataTable(json));
     }
@@ -86,7 +88,17 @@ function TableInfo() {
         setPage(0);
     };
 
-    const rows = dataTable;
+    const requestSearch = (searchedVal) => {
+        const filteredRows = dataTable.filter((row) => {
+            return row.sucursal.toLowerCase().includes(searchedVal.toLowerCase());
+        });
+        setDataTable(filteredRows);
+    };
+
+    const cancelSearch = () => {
+        setSearched("");
+        requestSearch(searched);
+    };
 
     return (
         <Box>
@@ -94,55 +106,60 @@ function TableInfo() {
                 Tabla de infomación:
             </div>
             <StyledTable>
-                    <TableContainer>
-                        <Table stickyHeader aria-label="sticky table">
-                            <TableHead>
-                                <TableRow>
-                                    {columns.map((column) => (
-                                        <TableCell
-                                            key={column.id}
-                                            align={column.align}
-                                            style={{ minWidth: column.minWidth }}
-                                        >
-                                            {column.label}
-                                        </TableCell>
-                                    ))}
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                                    return (
-                                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                                            {columns.map((column) => {
-                                                const value = row[column.id];
-                                                return (
-                                                    <TableCell key={column.id} align={column.align}>
-                                                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                                                    </TableCell>
-                                                );
-                                            })}
-                                        </TableRow >
-                                    );
-                                })}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                    <TablePagination
-                        sx={{ px: 2 }}
-                        rowsPerPageOptions={[50, 100, 500, 1000]}
-                        component="div"
-                        count={rows.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        backIconButtonProps={{
-                            'aria-label': 'Previous Page',
-                        }}
-                        nextIconButtonProps={{
-                            'aria-label': 'Next Page',
-                        }}
-                        onPageChange={handleChangePage}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
-                    />
+                <SearchBar
+                    value={searched}
+                    onChange={(searchVal) => requestSearch(searchVal)}
+                    onCancelSearch={() => cancelSearch()}
+                />
+                <TableContainer>
+                    <Table stickyHeader aria-label="sticky table">
+                        <TableHead>
+                            <TableRow>
+                                {columns.map((column) => (
+                                    <TableCell
+                                        key={column.id}
+                                        align={column.align}
+                                        style={{ minWidth: column.minWidth }}
+                                    >
+                                        {column.label}
+                                    </TableCell>
+                                ))}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {dataTable.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                                return (
+                                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                                        {columns.map((column) => {
+                                            const value = row[column.id];
+                                            return (
+                                                <TableCell key={column.id} align={column.align}>
+                                                    {column.format && typeof value === 'number' ? column.format(value) : value}
+                                                </TableCell>
+                                            );
+                                        })}
+                                    </TableRow >
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+                <TablePagination
+                    sx={{ px: 2 }}
+                    rowsPerPageOptions={[50, 100, 500, 1000]}
+                    component="div"
+                    count={dataTable.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    backIconButtonProps={{
+                        'aria-label': 'Previous Page',
+                    }}
+                    nextIconButtonProps={{
+                        'aria-label': 'Next Page',
+                    }}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                />
             </StyledTable>
         </Box>
 

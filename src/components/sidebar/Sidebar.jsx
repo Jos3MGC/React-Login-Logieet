@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './sidebar.scss'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { images } from '../../constants'
+import { images } from '../../assets/constants'
 import sidebarNav from '../../configs/sidebarNav'
 import { useUser } from "../../UserProvider/index";
 
